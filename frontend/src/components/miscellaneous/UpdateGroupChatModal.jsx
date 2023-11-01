@@ -60,6 +60,13 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
             );
 
             setSelectedChat(data);
+            toast({
+                title: `${user1.name} added successfully by ${user.name}`,
+                status: 'success',
+                duration: 2000,
+                position: 'top-right',
+                isClosable: true,
+            });
             setFetchAgain(!fetchAgain);
             setLoading(false);
 
@@ -102,7 +109,14 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 config
             );
 
-            user1._id === user._id ? setSelectedChat() :setSelectedChat(data);
+            user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
+            toast({
+                title: `${user1.name} remove successfully by ${user.name}`,
+                status: 'error',
+                duration: 2000,
+                position: 'top-right',
+                isClosable: true,
+            })
             setFetchAgain(!fetchAgain);
             fetchMessages();
             setLoading(false);
@@ -140,6 +154,13 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
             );
 
             setSelectedChat(data);
+            toast({
+                title: `${user.name} Rename of Group Successfull change ${groupChatName}`,
+                status: 'success',
+                duration: 2000,
+                position: 'top-right',
+                isClosable: true,
+            })
             setFetchAgain(!fetchAgain);
             setRenameLoading(false);
 
